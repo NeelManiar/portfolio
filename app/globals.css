@@ -7,10 +7,12 @@
   --accent: #ff5a36;
   --accent2: #4d5bff;
   --line: #262422;
+  --accent-border: #ff5a3699;
+  --accent-glow: rgba(255, 90, 54, 0.25);
 }
 
-* {
-  cursor: default;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,20 +25,44 @@ body {
   font-family: var(--font-mono), monospace;
 }
 
+/* Every card glows orange around the edge on hover */
+.card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.card:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 24px 0 var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Used when a project or photo has no image yet */
+.media-fallback {
+  background: linear-gradient(135deg, rgba(255, 90, 54, 0.25), rgba(77, 91, 255, 0.25));
+}
+
+/* Scrolling strip under the hero */
+.marquee {
+  animation: slide 40s linear infinite;
+}
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
 ::selection {
   background: var(--accent);
   color: var(--bg);
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--line);
-  border-radius: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {
