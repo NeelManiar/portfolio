@@ -71,3 +71,13 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Fade used when a gallery changes slide */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+.animate-fade {
+  animation: fade 0.4s ease;
+}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { createPortal } from "react-dom"
 import { projects, achievements, experience, contact, story } from "@/data"
 import type { Project } from "@/data"
 
@@ -19,10 +20,10 @@ const terminalLines = [
 ]
 
 const stats = [
-  { label: "Projects built", value: projects.length },
-  { label: "Achievements", value: achievements.length },
-  { label: "Ventures & roles", value: experience.length },
-  { label: "Age I started coding", value: 11 },
+  { label: "Projects built", value: projects.length, href: "#projects" },
+  { label: "Achievements", value: achievements.length, href: "#achievements" },
+  { label: "Ventures & roles", value: experience.length, href: "#experience" },
+  { label: "Age I started coding", value: 11, href: "#story" },
 ]
 
 const filters = ["All", ...Array.from(new Set(projects.flatMap((p) => p.tags)))]
@@ -74,19 +75,21 @@ function Counter({ to }: { to: number }) {
   )
 }
 
-// Shows the image if there is one, otherwise a colourful block with the first letter
-function Media({ src, label, className = "" }: { src?: string; label: string; className?: string }) {
-  if (src) {
-    return (
-      <div className={`relative overflow-hidden ${className}`}>
-        <Image src={src} alt={label} fill className="object-cover" />
-      </div>
-    )
-  }
+// Soft orange glow that follows the mouse
+function CursorGlow() {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const move = (e: MouseEvent) => {
+      ref.current!.style.transform = `translate(${e.clientX - 150}px, ${e.clientY - 150}px)`
+    }
+    window.addEventListener("mousemove", move)
+    return () => window.removeEventListener("mousemove", move)
+  }, [])
   return (
-    <div className={`media-fallback flex items-center justify-center font-bold ${className}`}>
-      {label[0]}
-    </div>
+    <div
+      ref={ref}
+      className="pointer-events-none fixed left-0 top-0 -z-10 hidden h-[300px] w-[300px] rounded-full bg-[var(--accent)] opacity-20 blur-3xl sm:block"
+    />
   )
 }
 
@@ -173,11 +176,125 @@ function Terminal() {
   )
 }
 
+// Photo slideshow: arrows, swipe, keyboard, "1 / N" counter, click to enlarge.
+// If a picture file is missing, a coloured placeholder is shown instead.
+function Gallery({ images, title }: { images: string[]; title: string }) {
+  const [i, setI] = useState(0)
+  const [zoom, setZoom] = useState(false)
+  const [missing, setMissing] = useState<string[]>([])
+  const touchStart = useRef(0)
+  const many = images.length > 1
+  const isMissing = missing.includes(images[i])
+  const go = (d: number) => setI((x) => (x + d + images.length) % images.length)
+
+  useEffect(() => {
+    if (!zoom) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setZoom(false)
+      if (e.key === "ArrowLeft") go(-1)
+      if (e.key === "ArrowRight") go(1)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [zoom])
+
+  const arrow =
+    "absolute top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 font-mono backdrop-blur transition hover:bg-[var(--accent)]"
+
+  return (
+    <div
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowLeft") go(-1)
+        if (e.key === "ArrowRight") go(1)
+      }}
+      onTouchStart={(e) => (touchStart.current = e.touches[0].clientX)}
+      onTouchEnd={(e) => {
+        const dx = e.changedTouches[0].clientX - touchStart.current
+        if (dx > 50) go(-1)
+        if (dx < -50) go(1)
+      }}
+      className="relative aspect-video overflow-hidden bg-black/40 outline-none"
+    >
+      {isMissing ? (
+        <div className="media-fallback absolute inset-0 flex items-center justify-center text-5xl font-bold">
+          {title[0]}
+        </div>
+      ) : (
+        <Image
+          key={images[i]}
+          src={images[i]}
+          alt={title}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          onClick={() => setZoom(true)}
+          onError={() => setMissing([...missing, images[i]])}
+          className="animate-fade cursor-zoom-in object-cover"
+        />
+      )}
+
+      {many && (
+        <>
+          <button onClick={() => go(-1)} aria-label="Previous" className={`${arrow} left-3`}>
+            ←
+          </button>
+          <button onClick={() => go(1)} aria-label="Next" className={`${arrow} right-3`}>
+            →
+          </button>
+          <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 font-mono text-xs">
+            {i + 1} / {images.length}
+          </span>
+        </>
+      )}
+
+      {zoom &&
+        !isMissing &&
+        createPortal(
+          <div
+            onClick={() => setZoom(false)}
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/90 p-6"
+          >
+            <div className="relative h-[75vh] w-full max-w-5xl">
+              <Image src={images[i]} alt={title} fill sizes="100vw" className="object-contain" />
+            </div>
+            <p className="mt-4 font-mono text-sm text-[var(--muted)]">
+              {title} {many && `(${i + 1} / ${images.length})`}
+            </p>
+            {many && (
+              <>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    go(-1)
+                  }}
+                  className={`${arrow} left-4`}
+                >
+                  ←
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    go(1)
+                  }}
+                  className={`${arrow} right-4`}
+                >
+                  →
+                </button>
+              </>
+            )}
+            <button className="absolute right-5 top-4 font-mono text-2xl">✕</button>
+          </div>,
+          document.body
+        )}
+    </div>
+  )
+}
+
 function ProjectCard({ p }: { p: Project }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`card overflow-hidden ${p.featured ? "md:col-span-2" : ""}`}>
-      {p.featured && <Media src={p.image} label={p.title} className="h-40 text-5xl" />}
+    <div className="card h-full overflow-hidden">
+      <Gallery images={p.images} title={p.title} />
       <div className="p-6">
         <h3 className="text-xl font-bold">{p.title}</h3>
         <p className={`mt-2 text-[var(--muted)] ${open ? "" : "line-clamp-3"}`}>{p.description}</p>
@@ -194,6 +311,11 @@ function ProjectCard({ p }: { p: Project }) {
         <a href={p.link} target="_blank" className="mt-4 inline-block font-mono text-sm text-[var(--accent2)]">
           Check the project out↗
         </a>
+        {p.demo && (
+          <a href={p.demo} target="_blank" className="ml-5 mt-4 inline-block font-mono text-sm text-[var(--accent)]">
+            Watch demo ↗
+          </a>
+        )}
       </div>
     </div>
   )
@@ -222,7 +344,11 @@ function Projects() {
       </div>
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {shown.map((p) => (
-          <ProjectCard key={p.title} p={p} />
+          <div key={p.title} className={p.featured ? "md:col-span-2" : ""}>
+            <Reveal>
+              <ProjectCard p={p} />
+            </Reveal>
+          </div>
         ))}
       </div>
     </section>
@@ -251,9 +377,16 @@ function Achievements() {
             <div className="text-5xl font-bold text-[var(--accent)]">
               {a.badge ?? String(i + 1).padStart(2, "0")}
             </div>
-            {a.image && <Media src={a.image} label={a.title} className="mt-4 h-36 rounded-lg" />}
+            <div className="mt-4 overflow-hidden rounded-lg">
+              <Gallery images={a.images} title={a.title} />
+            </div>
             <h3 className="mt-4 text-lg font-bold">{a.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{a.description}</p>
+            {a.link && (
+              <a href={a.link} target="_blank" className="mt-3 inline-block font-mono text-sm text-[var(--accent2)]">
+                See it ↗
+              </a>
+            )}
           </div>
         ))}
       </div>
@@ -275,6 +408,9 @@ function Experience() {
                 {e.organization} · {e.duration}
               </p>
               <p className="mt-3 max-w-2xl text-[var(--muted)]">{e.description}</p>
+              <div className="mt-4 max-w-md overflow-hidden rounded-lg">
+                <Gallery images={e.images} title={e.organization} />
+              </div>
             </div>
           </Reveal>
         ))}
@@ -286,6 +422,7 @@ function Experience() {
 export default function Home() {
   return (
     <main id="top" className="overflow-hidden">
+      <CursorGlow />
       <Nav />
 
       <div className="mx-auto max-w-5xl px-5">
@@ -305,12 +442,12 @@ export default function Home() {
 
         <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4">
           {stats.map((s) => (
-            <div key={s.label} className="card p-5">
+            <a key={s.label} href={s.href} className="card block p-5">
               <div className="text-4xl font-bold">
                 <Counter to={s.value} />
               </div>
               <p className="mt-1 font-mono text-xs text-[var(--muted)]">{s.label}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -328,7 +465,7 @@ export default function Home() {
         <Achievements />
         <Experience />
 
-        <section className="mt-28">
+        <section id="story" className="mt-28 scroll-mt-20">
           <h2 className="text-3xl font-bold sm:text-5xl">How and Why do I work the way I do</h2>
           <div className="mt-6 max-w-2xl space-y-5 leading-relaxed text-[var(--muted)]">
             {story.map((paragraph, i) => (
@@ -359,6 +496,10 @@ export default function Home() {
 
         <footer className="mt-20 text-center font-mono text-xs text-[var(--muted)]">
           © 2026 Neel Maniar — built solo.
+          <br />
+          <a href="#top" className="hover:text-[var(--accent)]">
+            Back to top ↑
+          </a>
         </footer>
       </div>
     </main>
