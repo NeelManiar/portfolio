@@ -15,8 +15,8 @@ const links = [
 
 const terminalLines = [
   { prompt: "whoami", output: "neel maniar" },
-  { prompt: "status", output: "building backlog killer, applying to a16z academy" },
-  { prompt: "next", output: "_" },
+  { prompt: "status", output: "Class 12, Building Barrier, Saving Humanity" },
+  { prompt: "next", output: "Ship Solutions that Deliver Value" },
 ]
 
 const stats = [
@@ -429,9 +429,9 @@ export default function Home() {
         <section className="grid items-center gap-10 pt-20 lg:grid-cols-2">
           <div>
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-              Curiosity to Impact,
+              Building For Humanity
               <br />
-              <span className="text-[var(--accent)]">Data Driven, Code Powered</span>
+              <span className="text-[var(--accent)]">With One Line of Code at a Time </span>
             </h1>
             <p className="mt-6 max-w-md text-lg text-[var(--muted)]">
               A Curious Teen from Ahmedabad,India. Self-taught builder. Projects that make an impact. For Humanity! 😎

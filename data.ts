@@ -1,10 +1,11 @@
 
+
 export type Project = {
   title: string
   description: string
   tags: string[]
   link: string
-  images: [] // picture links, shown as a slideshow with arrows
+  images: string[] // picture links, shown as a slideshow with arrows
   demo?: string // link to a demo video
   featured?: boolean // featured projects get a big card at the top
 }
@@ -36,16 +37,16 @@ const gh = "https://github.com/NeelManiar/"
 export const projects: Project[] = [
   {
     title: "Barrier",
-    images: ["/images/barrier-1.jpg"],
+    images: ["/images/barrier-1.jpg", "/images/barrier-2.jpg", "/images/barrier-3.jpg"],
     description:
       "Current, groundbreaking, revolutionary product under development that safeguards our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
     tags: ["AI", "Education", "Product"],
-    link: "https://github.com/NeelManiar",
+    link: "https://github.com/NeelManiar/Barrier",
     featured: true,
   },
   {
     title: "AI Startups Performance Analysis",
-    images: ["/images/ai-startups-1.jpg"],
+    images: ["/images/ai-startups-1.jpg", "/images/ai-startups-2.jpg", "/images/ai-startups-3.jpg"],
     description:
       "An excerpt of a data-driven research project that I carried out in my internship where we analysed how AI startups perform, correlating multiple factors to identify all external factors that go in building AI Companies today. Note: It is Modified and Posted with Permission",
     tags: ["Research", "Data Science", "Python"],
@@ -54,7 +55,7 @@ export const projects: Project[] = [
   },
   {
     title: "IndiConnect",
-    images: ["/images/indiconnect-1.jpg"],
+    images: ["/images/indiconnect-2.jpg", "/images/indiconnect-3.jpg", "/images/indiconnect-4.jpg", "/images/indiconnect-5.jpg", "/images/indiconnect-1.jpg"],
     description:
       "A high school project where we developed an end to end solution for betterment of the lives of average workers and employees more sustainable and efficient by making a small, but powerful impact in their everyday, monotonous lives.",
     tags: ["Product"], // was "Tag"
@@ -71,15 +72,25 @@ export const projects: Project[] = [
   },
   {
     title: "Football Transfer Market Simulator",
-    images: ["/images/football-transfer-1.jpg"],
+    images: ["/images/football-transfer-1.jpg", "/images/football-transfer-2.jpg", "/images/football-transfer-3.jpg", "/images/football-transfer-4.jpg"],
     description:
       "Football Teams waste a lot of time, money and energy in finding the right player. This simulator will allow teams to build the complete, tournament squad.",
     tags: ["Sports"], // was "Tag"
     link: gh + "Football-Transfer-Market-Simulator",
   },
+
+  {
+    title: "Global Indicators Report",
+    images: ["/images/football-transfer-1.jpg", "/images/football-transfer-2.jpg", "/images/football-transfer-3.jpg", "/images/football-transfer-4.jpg"],
+    description:
+      "A Social Impact driven project where I worked to analyse different public parameters for countries around the world, to push for improvement and establishing a fair reviewal mechanism.",
+    tags: ["Sports"], // was "Tag"
+    link: gh + "Football-Transfer-Market-Simulator",
+  },
+
   {
     title: "IBM Watson + Flask Application",
-    images: ["/images/ibm-watson-1.jpg"],
+    images: ["/images/ibm-watson-1.jpg", "/images/ibm-watson-2.jpg", "/images/ibm-watson-3.jpg"],
     description:
       "A hands-on AI application developed as part of IBM's AI developer coursework, exploring how AI capabilities can be integrated into practical software. The project gave me experience working with Python, APIs, application logic, and the process of turning an AI concept into a functioning application.",
     tags: ["AI", "Python"], // was "Tag"
@@ -103,7 +114,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tokyo 2020 Summer Olympics Analysis",
-    images: ["/images/tokyo-2020-1.jpg"],
+    images: ["/images/tokyo-2020-1.jpg", "/images/tokyo-2020-2.jpg", "/images/tokyo-2020-3.jpg", "/images/tokyo-2020-4.jpg", "/images/tokyo-2020-5.jpg"],
     description:
       "A data-analysis project exploring medal distributions and country-level performance during the Tokyo 2020 Olympic Games. I used data processing and visualization to investigate how sporting outcomes varied across participating countries and to turn a large dataset into understandable statistical insights.",
     tags: ["Data Science", "Sports"], // was "Tag"
@@ -111,7 +122,7 @@ export const projects: Project[] = [
   },
   {
     title: "Diwali Sales Analysis",
-    images: ["/images/diwali-sales-1.jpg"],
+    images: ["/images/diwali-sales-1.jpg", "/images/diwali-sales-2.jpg", "/images/diwali-sales-3.jpg", "/images/diwali-sales-4.jpg"],
     description:
       "An exploratory data-science project done for a retail company analyzing retail transactions during the Diwali period to understand purchasing patterns and customer behavior. Using Python, Pandas, NumPy, and Matplotlib, I cleaned and explored the dataset, identified trends across customers and products, and translated the results into visual insights.",
     tags: ["Data Science", "Python"], // was "Tag"
@@ -122,20 +133,26 @@ export const projects: Project[] = [
 export const achievements: Achievement[] = [
   {
     title: "Shark Teens S4",
-    images: ["/images/shark-teens-1.jpg"],
+    images: ["/images/IMG_3478.jpeg", "/images/IMG_3479.jpeg"],
     description:
       "Came 1st in a pitching competition at the age of 13, out of 125 applications, competing against university graduates to raise investments.",
     badge: "1st",
   },
   {
-    title: "TIE Ahmedabad (TYE)",
-    images: ["/images/tie-ahmedabad-1.jpg"],
+    title: "IIM Ahmedabad Ventures",
+    images: ["/images/IIM.png", "/images/IIM1.jpg"],
     description:
       "Pitched at the Indian Institute of Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nation wide recognition.",
   },
   {
+    title: "TIE Ahmedabad",
+    images: ["/images/tie1.png", "/images/TIE.jpeg"],
+    description:
+      "Enrolled in a selective entrepreneurship and engineering workshop by The Indus Entrepreneurs Ahmedabad's Young Entrpreneurs Program (TYE) where I learnt the paradigms of business and personally worked on establishing meanigful interrelations between technology, AI and Entrepreneurship ",
+  },
+  {
     title: "National Entrepreneurship Olympiad, IIT Bombay",
-    images: ["/images/neo-iitb-1.jpg"],
+    images: ["/images/NEO.jpeg"],
     description:
       "Participated in NEO, organised by E-Cell IITB in class 6, got certified and expanded by knowledge about the know hows of entrepreneurship.",
   },
@@ -153,7 +170,7 @@ export const achievements: Achievement[] = [
   },
   {
     title: "Aryabhata Ganit Challenge",
-    images: ["/images/aryabhata-1.jpg"],
+    images: ["/images/RSAGIIS.png", "/images/MAMGIIS.png"],
     description:
       "Achieved a Top 100 Rank (western region) in annual Mathematics Challenge for High Schoolers in India by the CBSE. Came 1st in the preliminary school selections.",
     badge: "Top 100",
@@ -172,10 +189,11 @@ export const achievements: Achievement[] = [
   },
 ]
 
+
 export const experience: WorkExperience[] = [
   {
     role: "Co-Founder and CEO",
-    images: ["/images/datacraft-1.jpg"],
+    images: ["/images/datacraft.png"],
     organization: "Datacraft",
     duration: "Jun 2023 - Apr 2024",
     description:
@@ -183,7 +201,7 @@ export const experience: WorkExperience[] = [
   },
   {
     role: "Cofounder, Strategic Advisor",
-    images: ["/images/checkmywarranty-1.jpg"],
+    images: ["/images/datacraft.png"],
     organization: "Checkmywarranty",
     duration: "Month Year – Present",
     description:
