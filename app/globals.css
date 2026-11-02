@@ -1,9 +1,11 @@
+
 @import "tailwindcss";
 
 :root {
   --bg: #0e0d0c;
   --fg: #f5f1ea;
-  --muted: #8a8680;
+  --muted: #bdb8ae;
+  --soft: #e4dfd5; /* brighter grey for paragraphs */
   --accent: #ff5a36;
   --accent2: #4d5bff;
   --line: #262422;
@@ -12,6 +14,7 @@
 }
 
 html {
+  font-size: 18px; /* makes all text and spacing about 12% bigger */
   scroll-behavior: smooth;
 }
 
@@ -80,4 +83,18 @@ body {
 }
 .animate-fade {
   animation: fade 0.4s ease;
+}
+
+/* Small orange bar above every section heading */
+h2::before {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.text-center h2::before {
+  margin-inline: auto;
 }

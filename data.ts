@@ -16,6 +16,7 @@ export type Achievement = {
   badge?: string // big text on the card, e.g. "1st"
   images: string[] // picture links (certificates or photos)
   link?: string // video, article or certificate link
+  linkLabel?: string
 }
 
 export type WorkExperience = {
@@ -27,19 +28,19 @@ export type WorkExperience = {
 }
 
 export const contact = {
-  email: "your-email@example.com",
+  email: "neelmaniar18@gmail.com",
   github: "https://github.com/NeelManiar",
-  linkedin: "https://linkedin.com/in/your-linkedin",
+  linkedin: "https://www.linkedin.com/in/neel-maniar-9929372a7/",
 }
 
 const gh = "https://github.com/NeelManiar/"
 
 export const projects: Project[] = [
   {
-    title: "Barrier",
+    title: "Barrier (WIP)",
     images: ["/images/barrier-1.jpg", "/images/barrier-2.jpg", "/images/barrier-3.jpg"],
     description:
-      "Current, groundbreaking, revolutionary product under development that safeguards our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
+      "Building a groundbreaking and revolutionary context aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
     tags: ["AI", "Education", "Product"],
     link: "https://github.com/NeelManiar/Barrier",
     featured: true,
@@ -84,12 +85,12 @@ export const projects: Project[] = [
     images: ["/images/football-transfer-1.jpg", "/images/football-transfer-2.jpg", "/images/football-transfer-3.jpg", "/images/football-transfer-4.jpg"],
     description:
       "A Social Impact driven project where I worked to analyse different public parameters for countries around the world, to push for improvement and establishing a fair reviewal mechanism.",
-    tags: ["Sports"], // was "Tag"
+    tags: ["Data Science", "Sustainability"], // was "Tag"
     link: gh + "Football-Transfer-Market-Simulator",
   },
 
   {
-    title: "IBM Watson + Flask Application",
+    title: "Emotions Detector NLP",
     images: ["/images/ibm-watson-1.jpg", "/images/ibm-watson-2.jpg", "/images/ibm-watson-3.jpg"],
     description:
       "A hands-on AI application developed as part of IBM's AI developer coursework, exploring how AI capabilities can be integrated into practical software. The project gave me experience working with Python, APIs, application logic, and the process of turning an AI concept into a functioning application.",
@@ -98,7 +99,7 @@ export const projects: Project[] = [
   },
   {
     title: "Mutual Funds Portfolio Manager",
-    images: ["/images/mutual-funds-1.jpg"],
+    images: ["/images/MF1.png", "/images/MF2.png", "/images/MF3.png", "/images/MF4.png", "/images/MF5.png"],
     description:
       "A Python-based data-analysis tool designed to compare mutual-fund portfolio data across different months. It processes raw portfolio files to identify securities that have been added or removed, making it easier to track changes in investment portfolios and understand how fund holdings evolve over time.",
     tags: ["Data Science", "Python"], // was "Tag"
@@ -106,7 +107,7 @@ export const projects: Project[] = [
   },
   {
     title: "NBA Players Evaluation",
-    images: ["/images/nba-players-1.jpg"],
+    images: ["/images/NBA1.png", "/images/NBA2.png", "/images/NBA3.png"],
     description:
       "An interactive data-analysis application built with Python and Streamlit for exploring NBA player statistics. The project combines data processing, statistical analysis, visualization, and an interactive interface, allowing users to investigate player performance and export the resulting data for further analysis.",
     tags: ["Data Science", "Python", "Sports"], // was "Tag"
@@ -142,7 +143,7 @@ export const achievements: Achievement[] = [
     title: "IIM Ahmedabad Ventures",
     images: ["/images/IIM.png", "/images/IIM1.jpg"],
     description:
-      "Pitched at the Indian Institute of Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nation wide recognition.",
+      "Pitched at the Indian Institute of Management, Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nation wide recognition.",
   },
   {
     title: "TIE Ahmedabad",
@@ -158,9 +159,11 @@ export const achievements: Achievement[] = [
   },
   {
     title: "Real World Challenges Convention (RWCC) (Singapore)",
-    images: ["/images/rwcc-singapore-1.jpg"],
-    description:
-      "Represented my school and achieved podium ranks multiple times in the annual, prestigious RWCC mega competitons held in Singapore, where we debated about AI, Security, Innovation, Creativity and Entreprenuership.",
+    images: ["/images/RWCC1.png", "/images/RWCC2.png", "/images/RWCC3.png"],
+     description:
+      "Represented my school and achieved podium ranks multiple times in the annual, prestigious RWCC mega competitons held in Singapore, where we debated about AI, Security, Innovation, Creativity and Entreprenuership. Got Covered in the school newsletter:",
+    link: "https://news.globalindianschool.org/ahmedabad/giis-ahmedabad-bags-the-2nd-runner-up-trophy-at-rwcc-organized-by-giis-smart-campus-singapore",
+    linkLabel: "Click Here",
   },
   {
     title: "Science Olympiad Foundation",
@@ -170,22 +173,22 @@ export const achievements: Achievement[] = [
   },
   {
     title: "Aryabhata Ganit Challenge",
-    images: ["/images/RSAGIIS.png", "/images/MAMGIIS.png"],
+    images: ["/images/Aryabhata Ganit Challenge.png", "/images/MAMGIIS.png"],
     description:
-      "Achieved a Top 100 Rank (western region) in annual Mathematics Challenge for High Schoolers in India by the CBSE. Came 1st in the preliminary school selections.",
+      "Achieved a Top 100 Rank (western region) in annual Mathematics Challenge for High Schoolers in India by the Central Board of Secondary Education (CBSE). Came 1st in the preliminary school selections.",
     badge: "Top 100",
   },
   {
     title: "Global Student Exchange Program (GSE) (Kuala Lumpur)",
-    images: ["/images/gse-kuala-lumpur-1.jpg"],
+    images: ["/images/GSE1.png", "/images/GSE2.png"],
     description:
       "Won the GSE in 2021 out of 15 teams where created innovative solutions to aid the massive agriculture industry in India by emphasising on building efficient reform mechanisms and smart systems to minimise produce loss and pricing discrepancies.",
   },
   {
     title: "Al Tasamuh (Abu Dhabi)",
-    images: ["/images/al-tasamuh-1.jpg"],
+    images: ["/images/AL-T.png"],
     description:
-      "Gave a talk on how critically important leadership is, especially during times of crisis and how technology can redefine the core idea behind taking successful decisions.",
+      "Gave a talk on how critically important leadership is, especially during times of social media, the risks involved and various technological factors that can redefine the core idea behind taking successful decisions.",
   },
 ]
 
@@ -201,7 +204,7 @@ export const experience: WorkExperience[] = [
   },
   {
     role: "Cofounder, Strategic Advisor",
-    images: ["/images/datacraft.png"],
+    images: ["/images/cmw.png"],
     organization: "Checkmywarranty",
     duration: "Month Year – Present",
     description:
@@ -209,7 +212,7 @@ export const experience: WorkExperience[] = [
   },
   {
     role: "Data Science and AI Research Intern",
-    images: ["/images/tridhya-tech-1.jpg"],
+    images: ["/images/tt.png"],
     organization: "Tridya Tech Limited",
     duration: "July 2026 – August 2026",
     description:
@@ -217,11 +220,11 @@ export const experience: WorkExperience[] = [
   },
   {
     role: "Software Test Engineer",
-    images: ["/images/techno-infonet-1.jpg"],
+    images: ["/images/tcno.png"],
     organization: "Techno Infonet Gujarat Private Limited",
     duration: "May 2023 - Jul 2023",
     description:
-      "At the age of 10-11, I worked to rigorously test and break software, find bugs and shortcomings, compare with competitors and present reports to the development teams about the results. It really helped to understand in depth about all the stages of building successful software.",
+      "At the age of 10-11, I worked to rigorously to test and break software, find bugs and shortcomings, compare with competitors and present reports to the development teams about the results. It really helped to understand in depth about all the stages of building successful software.",
   },
 ]
 
