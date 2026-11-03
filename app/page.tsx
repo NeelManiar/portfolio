@@ -221,7 +221,11 @@ function Gallery({
         if (dx > 50) go(-1)
         if (dx < -50) go(1)
       }}
-      className="relative aspect-video overflow-hidden bg-black/40 outline-none"
+      className={`relative overflow-hidden outline-none ${
+  fit === "experience"
+    ? "h-48 bg-white"
+    : "aspect-video bg-black/40"
+}`}
     >
       {isMissing ? (
         <div className="media-fallback absolute inset-0 flex items-center justify-center text-5xl font-bold">
@@ -241,7 +245,7 @@ function Gallery({
   fit === "cover"
     ? "object-cover"
     : fit === "experience"
-      ? "object-contain"
+      ? "object-contain p-6"
       : "object-contain p-3"
 }`}
         />
@@ -422,7 +426,7 @@ function Experience() {
                 {e.organization} · {e.duration}
               </p>
               <p className="mt-3 max-w-2xl text-[var(--muted)]">{e.description}</p>
-              <div className="mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-[var(--line)] bg-white/5">
+              <div className="mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-[var(--line)]">
               <Gallery
                 images={e.images}
                 title={e.organization}
