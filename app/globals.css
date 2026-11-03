@@ -1,4 +1,5 @@
 
+
 @import "tailwindcss";
 
 :root {
@@ -97,4 +98,26 @@ h2::before {
 }
 .text-center h2::before {
   margin-inline: auto;
+}
+
+/* More consistent reading experience */
+.card p {
+  line-height: 1.65;
+}
+
+/* Avoid layout overflow from long content */
+.card {
+  min-width: 0;
+}
+
+/* Prevent gallery images from appearing stretched */
+.card img {
+  object-position: center;
+}
+
+/* Better mobile card spacing */
+@media (max-width: 640px) {
+  .card {
+    border-radius: 12px;
+  }
 }

@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { useEffect, useRef, useState } from "react"
@@ -226,10 +228,11 @@ function Gallery({ images, title }: { images: string[]; title: string }) {
           src={images[i]}
           alt={title}
           fill
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 1024px) 960px, (min-width: 768px) 50vw, 100vw"
+          quality={90}
           onClick={() => setZoom(true)}
           onError={() => setMissing([...missing, images[i]])}
-          className="animate-fade cursor-zoom-in object-cover"
+          className="animate-fade cursor-zoom-in object-contain p-3"
         />
       )}
 
@@ -293,15 +296,15 @@ function Gallery({ images, title }: { images: string[]; title: string }) {
 function ProjectCard({ p }: { p: Project }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className="card h-full overflow-hidden">
+    <div className="card flex h-full flex-col overflow-hidden">
       <Gallery images={p.images} title={p.title} />
-      <div className="p-6">
+      <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-bold">{p.title}</h3>
         <p className={`mt-2 text-[var(--muted)] ${open ? "" : "line-clamp-3"}`}>{p.description}</p>
         <button onClick={() => setOpen(!open)} className="mt-1 font-mono text-xs text-[var(--accent)]">
           {open ? "Show less" : "Read more"}
         </button>
-        <div className="mt-4 flex flex-wrap gap-2 font-mono text-xs text-[var(--muted)]">
+        <div className="mt-auto flex flex-wrap gap-2 pt-5 font-mono text-xs text-[var(--muted)]">
           {p.tags.map((t) => (
             <span key={t} className="rounded-full border border-[var(--line)] px-2.5 py-1">
               {t}
@@ -408,7 +411,7 @@ function Experience() {
                 {e.organization} · {e.duration}
               </p>
               <p className="mt-3 max-w-2xl text-[var(--muted)]">{e.description}</p>
-              <div className="mt-4 max-w-md overflow-hidden rounded-lg">
+              <div className="mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-[var(--line)] bg-white/5">
                 <Gallery images={e.images} title={e.organization} />
               </div>
             </div>
