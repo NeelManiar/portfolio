@@ -184,7 +184,7 @@ function Gallery({
 }: {
   images: string[]
   title: string
-  fit?: "contain" | "cover"
+  fit?: "contain" | "cover" | "experience"
 }) {
   const [i, setI] = useState(0)
   const [zoom, setZoom] = useState(false)
@@ -238,8 +238,12 @@ function Gallery({
           onClick={() => setZoom(true)}
           onError={() => setMissing([...missing, images[i]])}
           className={`animate-fade cursor-zoom-in ${
-          fit === "cover" ? "object-cover" : "object-contain p-3"
-          }`}
+  fit === "cover"
+    ? "object-cover"
+    : fit === "experience"
+      ? "object-contain"
+      : "object-contain p-3"
+}`}
         />
       )}
 
@@ -419,8 +423,12 @@ function Experience() {
               </p>
               <p className="mt-3 max-w-2xl text-[var(--muted)]">{e.description}</p>
               <div className="mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-[var(--line)] bg-white/5">
-                <Gallery images={e.images} title={e.organization} fit="cover" />
-              </div>
+              <Gallery
+                images={e.images}
+                title={e.organization}
+                fit="experience"
+              />
+            </div>
             </div>
           </Reveal>
         ))}
