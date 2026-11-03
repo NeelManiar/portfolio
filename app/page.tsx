@@ -177,10 +177,15 @@ function Terminal() {
     </div>
   )
 }
-
-// Photo slideshow: arrows, swipe, keyboard, "1 / N" counter, click to enlarge.
-// If a picture file is missing, a coloured placeholder is shown instead.
-function Gallery({ images, title }: { images: string[]; title: string }) {
+function Gallery({
+  images,
+  title,
+  fit = "contain",
+}: {
+  images: string[]
+  title: string
+  fit?: "contain" | "cover"
+}) {
   const [i, setI] = useState(0)
   const [zoom, setZoom] = useState(false)
   const [missing, setMissing] = useState<string[]>([])
@@ -232,7 +237,9 @@ function Gallery({ images, title }: { images: string[]; title: string }) {
           quality={90}
           onClick={() => setZoom(true)}
           onError={() => setMissing([...missing, images[i]])}
-          className="animate-fade cursor-zoom-in object-contain p-3"
+          className={`animate-fade cursor-zoom-in ${
+          fit === "cover" ? "object-cover" : "object-contain p-3"
+          }`}
         />
       )}
 
@@ -381,7 +388,7 @@ function Achievements() {
               {a.badge ?? String(i + 1).padStart(2, "0")}
             </div>
             <div className="mt-4 overflow-hidden rounded-lg">
-              <Gallery images={a.images} title={a.title} />
+              <Gallery images={a.images} title={a.title} fit="cover" />
             </div>
             <h3 className="mt-4 text-lg font-bold">{a.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{a.description}</p>
@@ -412,7 +419,7 @@ function Experience() {
               </p>
               <p className="mt-3 max-w-2xl text-[var(--muted)]">{e.description}</p>
               <div className="mt-4 w-full max-w-sm overflow-hidden rounded-lg border border-[var(--line)] bg-white/5">
-                <Gallery images={e.images} title={e.organization} />
+                <Gallery images={e.images} title={e.organization} fit="cover" />
               </div>
             </div>
           </Reveal>
