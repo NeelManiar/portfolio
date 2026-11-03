@@ -14,8 +14,8 @@ const links = [
 ]
 
 const terminalLines = [
-  { prompt: "whoami", output: "neel maniar" },
-  { prompt: "status", output: "Class 12, Building Barrier, Saving Humanity" },
+  { prompt: "whoami", output: "neel maniar, 17 years old" },
+  { prompt: "status", output: "Class 12, Building Barrier, Contributing to Open Source" },
   { prompt: "next", output: "Ship Solutions that Deliver Value" },
 ]
 
@@ -361,7 +361,7 @@ function Achievements() {
   return (
     <section id="achievements" className="mt-28 scroll-mt-20">
       <div className="flex items-end justify-between">
-        <h2 className="text-3xl font-bold sm:text-5xl">Achievements</h2>
+        <h2 className="text-3xl font-bold sm:text-5xl">Notable Achievements</h2>
         <div className="flex gap-2 font-mono">
           <button onClick={() => scroll(-340)} className="card h-10 w-10">
             ←
@@ -434,7 +434,7 @@ export default function Home() {
               <span className="text-[var(--accent)]">With One Line of Code at a Time </span>
             </h1>
             <p className="mt-6 max-w-md text-lg text-[var(--muted)]">
-              A Curious Teen from Ahmedabad,India. Self-taught builder. Projects that make an impact. For Humanity! 😎
+              A Curious Teen from Ahmedabad, India. Self-taught builder. Projects that make an impact. For Humanity! 😎
             </p>
           </div>
           <Terminal />

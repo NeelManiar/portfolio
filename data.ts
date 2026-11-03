@@ -1,5 +1,3 @@
-
-
 export type Project = {
   title: string
   description: string
@@ -9,7 +7,6 @@ export type Project = {
   demo?: string // link to a demo video
   featured?: boolean // featured projects get a big card at the top
 }
-
 export type Achievement = {
   title: string
   description: string
@@ -18,7 +15,6 @@ export type Achievement = {
   link?: string // video, article or certificate link
   linkLabel?: string
 }
-
 export type WorkExperience = {
   role: string
   organization: string
@@ -26,15 +22,13 @@ export type WorkExperience = {
   description: string
   images: string[] // picture links (certificates or photos)
 }
-
 export const contact = {
   email: "neelmaniar18@gmail.com",
   github: "https://github.com/NeelManiar",
   linkedin: "https://www.linkedin.com/in/neel-maniar-9929372a7/",
 }
-
 const gh = "https://github.com/NeelManiar/"
-
+export const barrierDemoUrl = ""
 export const projects: Project[] = [
   {
     title: "Barrier (WIP)",
@@ -42,9 +36,20 @@ export const projects: Project[] = [
     description:
       "Building a groundbreaking and revolutionary context aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
     tags: ["AI", "Education", "Product"],
+    link: "https://barrierlabs.streamlit.app/",
+    featured: true,
+  },
+  /*{
+  {
+    title: "BacklogKiller (WIP)",
+    images: ["/images/barrier-1.jpg", "/images/barrier-2.jpg", "/images/barrier-3.jpg"],
+    description:
+      "Building a groundbreaking and revolutionary context aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
+    tags: ["AI", "Education", "Product"],
     link: "https://github.com/NeelManiar/Barrier",
     featured: true,
   },
+  }*/
   {
     title: "AI Startups Performance Analysis",
     images: ["/images/ai-startups-1.jpg", "/images/ai-startups-2.jpg", "/images/ai-startups-3.jpg"],
@@ -79,16 +84,14 @@ export const projects: Project[] = [
     tags: ["Sports"], // was "Tag"
     link: gh + "Football-Transfer-Market-Simulator",
   },
-
   {
     title: "Global Indicators Report",
-    images: ["/images/football-transfer-1.jpg", "/images/football-transfer-2.jpg", "/images/football-transfer-3.jpg", "/images/football-transfer-4.jpg"],
+    images: ["/images/GI1.png", "/images/GI2.png", "/images/GI3.png", "/images/GI4.png", "/images/GI5.png"],
     description:
       "A Social Impact driven project where I worked to analyse different public parameters for countries around the world, to push for improvement and establishing a fair reviewal mechanism.",
     tags: ["Data Science", "Sustainability"], // was "Tag"
     link: gh + "Football-Transfer-Market-Simulator",
   },
-
   {
     title: "Emotions Detector NLP",
     images: ["/images/ibm-watson-1.jpg", "/images/ibm-watson-2.jpg", "/images/ibm-watson-3.jpg"],
@@ -107,7 +110,7 @@ export const projects: Project[] = [
   },
   {
     title: "NBA Players Evaluation",
-    images: ["/images/NBA1.png", "/images/NBA2.png", "/images/NBA3.png"],
+    images: ["/images/NBA1.png", "/images/NBA2.png", "/images/NBA.png"],
     description:
       "An interactive data-analysis application built with Python and Streamlit for exploring NBA player statistics. The project combines data processing, statistical analysis, visualization, and an interactive interface, allowing users to investigate player performance and export the resulting data for further analysis.",
     tags: ["Data Science", "Python", "Sports"], // was "Tag"
@@ -130,7 +133,6 @@ export const projects: Project[] = [
     link: gh + "Diwali-Sales-Analysis",
   },
 ]
-
 export const achievements: Achievement[] = [
   {
     title: "Shark Teens S4",
@@ -152,10 +154,22 @@ export const achievements: Achievement[] = [
       "Enrolled in a selective entrepreneurship and engineering workshop by The Indus Entrepreneurs Ahmedabad's Young Entrpreneurs Program (TYE) where I learnt the paradigms of business and personally worked on establishing meanigful interrelations between technology, AI and Entrepreneurship ",
   },
   {
+    title: "IIT Madras Data Science and Artificial Intelligence",
+    images: ["/images/IITM.jpg"],
+    description:
+      "Successfully completed an intensive, 8-week course on Data Science and Artificial Intelligence by the best engineering university in India, the Indian Institute of Technology,Madras as a part of their specialised School Connect Programme where in I learned about the core fundamentals of various analytical tools and algorithms that powers our models today.",
+  },
+  {
     title: "National Entrepreneurship Olympiad, IIT Bombay",
     images: ["/images/NEO.jpeg"],
     description:
       "Participated in NEO, organised by E-Cell IITB in class 6, got certified and expanded by knowledge about the know hows of entrepreneurship.",
+  },
+  {
+    title: "Queen's Essay Writing Competition, 2026",
+    images: ["/images/QEW.png"],
+    description:
+      "Wrote a Bronze Winning Essay on the importance of judicious development of AI, arguing for a more collective and inclusive absorption of this technology with a special emphasis on the Commonwealth."
   },
   {
     title: "Real World Challenges Convention (RWCC) (Singapore)",
@@ -191,8 +205,6 @@ export const achievements: Achievement[] = [
       "Gave a talk on how critically important leadership is, especially during times of social media, the risks involved and various technological factors that can redefine the core idea behind taking successful decisions.",
   },
 ]
-
-
 export const experience: WorkExperience[] = [
   {
     role: "Co-Founder and CEO",
@@ -206,7 +218,7 @@ export const experience: WorkExperience[] = [
     role: "Cofounder, Strategic Advisor",
     images: ["/images/cmw.png"],
     organization: "Checkmywarranty",
-    duration: "Month Year – Present",
+    duration: "May 2026 - June 2026",
     description:
       "Served as founding, technical advisor to Checkmywarranty, an end to end warranty management solution that enables us to keep track of product and service warranties, give timely reminders and help users avail the benefits that they carelessly lost. I helped oversee the feasibility of the idea, validated on public platforms, and ensured that all the technical requirements are met",
   },
@@ -227,7 +239,6 @@ export const experience: WorkExperience[] = [
       "At the age of 10-11, I worked to rigorously to test and break software, find bugs and shortcomings, compare with competitors and present reports to the development teams about the results. It really helped to understand in depth about all the stages of building successful software.",
   },
 ]
-
 export const story = [
   "I started programming (formally) at the age of 11. Ever since, I have become incredibly curious, trying to figure out an intersection between the ability to write code, and solve real world problems. I, from a very young age, have been addicted to computers and books. I read about some of the most successful Entrepreneurs, who differentiated themselves from others by thinking from the First Principles. I am learning to implement the same.",
   "This thought pushes me forward everyday to contribute to this society and build.",
