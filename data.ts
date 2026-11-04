@@ -140,7 +140,7 @@ export const achievements: Achievement[] = [
   },
   {
     title: "IIM Ahmedabad Ventures",
-    images: ["/images/IIM.png", "/images/IIM1.jpg"],
+    images: ["/images/IIM.png"],
     description:
       "Pitched at the Indian Institute of Management, Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nationwide recognition.",
   },
