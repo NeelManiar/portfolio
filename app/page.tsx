@@ -17,7 +17,7 @@ const links = [
 
 const terminalLines = [
   { prompt: "whoami", output: "neel maniar, 17 years old" },
-  { prompt: "status", output: "Class 12, Building Barrier, Contributing to Open Source" },
+  { prompt: "status", output: "Class 12 | Building Barrier | Contributing to Open Source" },
   { prompt: "next", output: "Ship Solutions that Deliver Value" },
 ]
 
@@ -453,7 +453,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
               Building For Humanity
               <br />
-              <span className="text-[var(--accent)]">With One Line of Code at a Time </span>
+              <span className="text-[var(--accent)]">One Line of Code at a Time </span>
             </h1>
             <p className="mt-6 max-w-md text-lg text-[var(--muted)]">
               A Curious Teen from Ahmedabad, India. Self-taught builder. Projects that make an impact. For Humanity! 😎

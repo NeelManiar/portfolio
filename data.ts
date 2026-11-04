@@ -34,27 +34,25 @@ export const projects: Project[] = [
     title: "Barrier (WIP)",
     images: ["/images/barrier-1.jpg", "/images/barrier-2.jpg", "/images/barrier-3.jpg"],
     description:
-      "Building a groundbreaking and revolutionary context aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
-    tags: ["AI", "Education", "Product"],
+      "Building a groundbreaking and revolutionary context-aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI agents, protecting critical information and security.",
+    tags: ["AI", "Education", "Product", "WIP"],
     link: "https://barrierlabs.streamlit.app/",
     featured: true,
   },
-  /*{
   {
-    title: "BacklogKiller (WIP)",
-    images: ["/images/barrier-1.jpg", "/images/barrier-2.jpg", "/images/barrier-3.jpg"],
-    description:
-      "Building a groundbreaking and revolutionary context aware authorization ecosystem (under development) responsible for safeguarding our data and applications from sophisticated infiltration attempts by AI Agents, protecting critical data and security.",
-    tags: ["AI", "Education", "Product"],
-    link: "https://github.com/NeelManiar/Barrier",
-    featured: true,
-  },
-  }*/
+  title: "Backlog Killer (WIP)",
+  images: ["/images/BK1.png", "/images/BK2.png", "/images/BK3.png", "/images/BK4.png"],
+  description:
+    "Building a mobile application that addresses the biggest issue students face in their academic journey, Backlogs and its connection to syllabus completion and exam preparation to successfully navigate examinations. ",
+  tags: ["AI", "Education", "Mobile Development", "WIP"],
+  link: "YOUR_BACKLOG_KILLER_GITHUB_URL",
+  featured: true,
+},
   {
     title: "AI Startups Performance Analysis",
     images: ["/images/ai-startups-1.jpg", "/images/ai-startups-2.jpg", "/images/ai-startups-3.jpg"],
     description:
-      "An excerpt of a data-driven research project that I carried out in my internship where we analysed how AI startups perform, correlating multiple factors to identify all external factors that go in building AI Companies today. Note: It is Modified and Posted with Permission",
+      "An excerpt of a data-driven research project that I carried out in my internship where we analysed how AI startups perform, correlating multiple variables to identify all external factors that go into building AI companies today. Note: It is modified and posted with permission",
     tags: ["Research", "Data Science", "Python"],
     link: gh + "AI-Startups-Performance-Analysis",
     featured: true,
@@ -63,7 +61,7 @@ export const projects: Project[] = [
     title: "IndiConnect",
     images: ["/images/indiconnect-2.jpg", "/images/indiconnect-3.jpg", "/images/indiconnect-4.jpg", "/images/indiconnect-5.jpg", "/images/indiconnect-1.jpg"],
     description:
-      "A high school project where we developed an end to end solution for betterment of the lives of average workers and employees more sustainable and efficient by making a small, but powerful impact in their everyday, monotonous lives.",
+      "A high school project where we developed an end-to-end solution to make the lives of average workers more sustainable and efficient, bringing a small but meaningful impact to their daily routines.",
     tags: ["Product"], // was "Tag"
     link: gh + "IndiConnect",
     featured: true,
@@ -80,7 +78,7 @@ export const projects: Project[] = [
     title: "Football Transfer Market Simulator",
     images: ["/images/football-transfer-1.jpg", "/images/football-transfer-2.jpg", "/images/football-transfer-3.jpg", "/images/football-transfer-4.jpg"],
     description:
-      "Football Teams waste a lot of time, money and energy in finding the right player. This simulator will allow teams to build the complete, tournament squad.",
+      "Football teams waste a lot of time, money and energy in finding the right player. This simulator will allow teams to build the complete championship winning squad.",
     tags: ["Sports"], // was "Tag"
     link: gh + "Football-Transfer-Market-Simulator",
   },
@@ -145,25 +143,25 @@ export const achievements: Achievement[] = [
     title: "IIM Ahmedabad Ventures",
     images: ["/images/IIM.png", "/images/IIM1.jpg"],
     description:
-      "Pitched at the Indian Institute of Management, Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nation wide recognition.",
+      "Pitched at the Indian Institute of Management, Ahmedabad (IIM-A) in front of some of the biggest industry leaders in Ahmedabad and India where we achieved nationwide recognition.",
   },
   {
     title: "TIE Ahmedabad",
     images: ["/images/tie1.png", "/images/TIE.jpeg"],
     description:
-      "Enrolled in a selective entrepreneurship and engineering workshop by The Indus Entrepreneurs Ahmedabad's Young Entrpreneurs Program (TYE) where I learnt the paradigms of business and personally worked on establishing meanigful interrelations between technology, AI and Entrepreneurship ",
+      "Enrolled in a selective entrepreneurship and engineering workshop by The Indus Entrepreneurs Ahmedabad's Young Entrepreneurs Program (TYE) where I learnt the paradigms of business and personally worked on establishing meaningful interrelations between technology, AI and entrepreneurship. ",
   },
   {
     title: "IIT Madras Data Science and Artificial Intelligence",
     images: ["/images/IITM.jpg"],
     description:
-      "Successfully completed an intensive, 8-week course on Data Science and Artificial Intelligence by the best engineering university in India, the Indian Institute of Technology,Madras as a part of their specialised School Connect Programme where in I learned about the core fundamentals of various analytical tools and algorithms that powers our models today.",
+      "Successfully completed an intensive, 8-week course on Data Science and Artificial Intelligence by the best engineering university in India, the Indian Institute of Technology, Madras as a part of their specialised School Connect Programme wherein I learned about the core fundamentals of various analytical tools and algorithms that power our models today.",
   },
   {
     title: "National Entrepreneurship Olympiad, IIT Bombay",
     images: ["/images/NEO.jpeg"],
     description:
-      "Participated in NEO, organised by E-Cell IITB in class 6, got certified and expanded by knowledge about the know hows of entrepreneurship.",
+      "Participated in NEO, organised by E-Cell IITB in Grade 6, got certified and expanded my knowledge about the know-how of entrepreneurship.",
   },
   {
     title: "Queen's Essay Writing Competition, 2026",
@@ -175,7 +173,7 @@ export const achievements: Achievement[] = [
     title: "Real World Challenges Convention (RWCC) (Singapore)",
     images: ["/images/RWCC1.png", "/images/RWCC2.png", "/images/RWCC3.png"],
      description:
-      "Represented my school and achieved podium ranks multiple times in the annual, prestigious RWCC mega competitons held in Singapore, where we debated about AI, Security, Innovation, Creativity and Entreprenuership. Got Covered in the school newsletter:",
+      "Represented my school and achieved podium ranks multiple times in the annual, prestigious RWCC mega competitions held in Singapore, where we debated about AI, Security, Innovation, Creativity and Entrepreneurship. Featured in the school newsletter:",
     link: "https://news.globalindianschool.org/ahmedabad/giis-ahmedabad-bags-the-2nd-runner-up-trophy-at-rwcc-organized-by-giis-smart-campus-singapore",
     linkLabel: "Click Here",
   },
@@ -183,7 +181,7 @@ export const achievements: Achievement[] = [
     title: "Science Olympiad Foundation",
     images: ["/images/sof-olympiads-1.jpg"],
     description:
-      "Participated in countless English, Maths and Science and Cyber Olympiads organised by the SOF throughout my schooling years, reaping many awards, nationally and internationally.",
+      "Participated in numerous English, Math, Science, and Cyber Olympiads organized by the SOF throughout my schooling, winning multiple national and international awards.",
   },
   {
     title: "Aryabhata Ganit Challenge",
@@ -196,13 +194,13 @@ export const achievements: Achievement[] = [
     title: "Global Student Exchange Program (GSE) (Kuala Lumpur)",
     images: ["/images/GSE1.png", "/images/GSE2.png"],
     description:
-      "Won the GSE in 2021 out of 15 teams where created innovative solutions to aid the massive agriculture industry in India by emphasising on building efficient reform mechanisms and smart systems to minimise produce loss and pricing discrepancies.",
+      "Won the GSE in 2021 out of 15 teams where we created innovative solutions to aid the massive agriculture industry in India by emphasising on building efficient reform mechanisms and smart systems to minimise produce loss and pricing discrepancies.",
   },
   {
     title: "Al Tasamuh (Abu Dhabi)",
     images: ["/images/AL-T.png"],
     description:
-      "Gave a talk on how critically important leadership is, especially during times of social media, the risks involved and various technological factors that can redefine the core idea behind taking successful decisions.",
+      "Gave a talk on how critically important leadership is, especially during times of social media, the risks involved and various technological factors that can redefine the core idea behind making effective decisions.",
   },
 ]
 export const experience: WorkExperience[] = [
@@ -212,7 +210,7 @@ export const experience: WorkExperience[] = [
     organization: "Datacraft",
     duration: "Jun 2023 - Apr 2024",
     description:
-      "I founded a B2B2C company with my friend at the age of 13 out of an entrepreneurship workshop hosted by the renowned organisation, The Indus Entreprenuers (TIE), Ahmedabad Chapter. We aimed to solve the present issue of effectively managing data, from product details to insurance papers. For a normal man, this has been a headache. We even raised basic investment from an incubator, that too, winning against graduate students, however we failed to build up on the momentum, and paused the idea.",
+      "I founded a B2B2C company with my friend at the age of 13 out of an entrepreneurship workshop hosted by the renowned organization, The Indus Entrepreneurs (TIE), Ahmedabad Chapter. We aimed to solve the present issue of effectively managing data, from product details to insurance papers. For a normal man, this has been a headache. We even raised basic investment from an incubator, that too, winning against graduate students, however we failed to build up on the momentum, and paused the idea.",
   },
   {
     role: "Cofounder, Strategic Advisor",
@@ -220,7 +218,7 @@ export const experience: WorkExperience[] = [
     organization: "Checkmywarranty",
     duration: "May 2026 - June 2026",
     description:
-      "Served as founding, technical advisor to Checkmywarranty, an end to end warranty management solution that enables us to keep track of product and service warranties, give timely reminders and help users avail the benefits that they carelessly lost. I helped oversee the feasibility of the idea, validated on public platforms, and ensured that all the technical requirements are met",
+      "Served as founding technical advisor to Checkmywarranty, an end to end warranty management solution that enables us to keep track of product and service warranties, give timely reminders and help users avail the benefits that they missed. I helped oversee the feasibility of the idea, validated on public platforms, and ensured that all the technical requirements were met. ",
   },
   {
     role: "Data Science and AI Research Intern",
@@ -228,7 +226,7 @@ export const experience: WorkExperience[] = [
     organization: "Tridya Tech Limited",
     duration: "July 2026 – August 2026",
     description:
-      "I completed an internship at Tridhya Tech, a publicly listed company in India where we worked to identify and understand AI Startups, different factors like Funding, Team Size, Years in Operation, Customer Satisfaction, Churn, AI Models, Industry Segregation amongst others to help the management identify the right kind of companies to invest in, and what is needed to be done to build a successful AI Company",
+      "I completed an internship at Tridhya Tech, a publicly listed company in India where we worked to identify and understand AI Startups, different factors like Funding, Team Size, Years in Operation, Customer Satisfaction, Churn, AI Models, Industry Segregation among others to help the management identify the right kind of companies to invest in, and what is needed to be done to build a successful AI Company.",
   },
   {
     role: "Software Test Engineer",
@@ -236,11 +234,11 @@ export const experience: WorkExperience[] = [
     organization: "Techno Infonet Gujarat Private Limited",
     duration: "May 2023 - Jul 2023",
     description:
-      "At the age of 10-11, I worked to rigorously to test and break software, find bugs and shortcomings, compare with competitors and present reports to the development teams about the results. It really helped to understand in depth about all the stages of building successful software.",
+      "At the age of 10-11, I worked rigorously to test and break software, find bugs and shortcomings, compare with competitors and present reports to the development teams about the results. It really helped to understand in depth about all the stages of building successful software.",
   },
 ]
 export const story = [
-  "I started programming (formally) at the age of 11. Ever since, I have become incredibly curious, trying to figure out an intersection between the ability to write code, and solve real world problems. I, from a very young age, have been addicted to computers and books. I read about some of the most successful Entrepreneurs, who differentiated themselves from others by thinking from the First Principles. I am learning to implement the same.",
-  "This thought pushes me forward everyday to contribute to this society and build.",
-  "I started ventures, failed, learnt and came back again. To make humanity sustain the deep, uncertain tomorrow, giving up is never an option. For me, it has never ever been.",
+  "I formally started programming at age 11. Ever since, I have been driven by curiosity—exploring the intersection between writing code and solving real-world problems. From a young age, I have been deeply passionate about technology and reading, learning from successful entrepreneurs who approach challenges through first-principles thinking.",
+
+  "This mindset pushes me forward every day to build and contribute meaningfully to society. I have launched ventures, failed, learned, and returned stronger. To build solutions that endure, giving up is never an option.  For me, it has never been."
 ]
