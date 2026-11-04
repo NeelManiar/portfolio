@@ -2,7 +2,7 @@ export type Project = {
   title: string
   description: string
   tags: string[]
-  link: string
+  link?: string
   images: string[] // picture links, shown as a slideshow with arrows
   demo?: string // link to a demo video
   featured?: boolean // featured projects get a big card at the top
@@ -45,7 +45,6 @@ export const projects: Project[] = [
   description:
     "Building a mobile application that addresses the biggest issue students face in their academic journey, Backlogs and its connection to syllabus completion and exam preparation to successfully navigate examinations. ",
   tags: ["AI", "Education", "Mobile Development", "WIP"],
-  link: "YOUR_BACKLOG_KILLER_GITHUB_URL",
   featured: true,
 },
   {

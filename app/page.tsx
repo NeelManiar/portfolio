@@ -326,9 +326,16 @@ function ProjectCard({ p }: { p: Project }) {
             </span>
           ))}
         </div>
-        <a href={p.link} target="_blank" className="mt-4 inline-block font-mono text-sm text-[var(--accent2)]">
+        {p.link && (
+        <a
+          href={p.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block font-mono text-sm text-[var(--accent2)]"
+        >
           Check the project out↗
         </a>
+)}
         {p.demo && (
           <a href={p.demo} target="_blank" className="ml-5 mt-4 inline-block font-mono text-sm text-[var(--accent)]">
             Watch demo ↗
