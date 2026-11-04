@@ -178,7 +178,7 @@ export const achievements: Achievement[] = [
   },
   {
     title: "Science Olympiad Foundation",
-    images: ["/images/sof-olympiads-1.jpg"],
+    images: ["/images/SOF.jpeg"],
     description:
       "Participated in numerous English, Math, Science, and Cyber Olympiads organized by the SOF throughout my schooling, winning multiple national and international awards.",
   },
