@@ -1,0 +1,100 @@
+
+@import "tailwindcss";
+
+:root {
+  --bg: #0e0d0c;
+  --fg: #f5f1ea;
+  --muted: #bdb8ae;
+  --soft: #e4dfd5; /* brighter grey for paragraphs */
+  --accent: #ff5a36;
+  --accent2: #4d5bff;
+  --line: #262422;
+  --accent-border: #ff5a3699;
+  --accent-glow: rgba(255, 90, 54, 0.25);
+}
+
+html {
+  font-size: 18px; /* makes all text and spacing about 12% bigger */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Every card glows orange around the edge on hover */
+.card {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.card:hover {
+  border-color: var(--accent-border);
+  box-shadow: 0 0 24px 0 var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Used when a project or photo has no image yet */
+.media-fallback {
+  background: linear-gradient(135deg, rgba(255, 90, 54, 0.25), rgba(77, 91, 255, 0.25));
+}
+
+/* Scrolling strip under the hero */
+.marquee {
+  animation: slide 40s linear infinite;
+}
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Fade used when a gallery changes slide */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+.animate-fade {
+  animation: fade 0.4s ease;
+}
+
+/* Small orange bar above every section heading */
+h2::before {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  background: var(--accent);
+}
+.text-center h2::before {
+  margin-inline: auto;
+}

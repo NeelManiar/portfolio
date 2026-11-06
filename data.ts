@@ -152,9 +152,9 @@ export const achievements: Achievement[] = [
   },
   {
     title: "IIT Madras Data Science and Artificial Intelligence",
-    images: ["/images/IITM.jpg"],
+    images: ["/images/IITM1.jpg", "/images/IITM.jpg"],
     description:
-      "Successfully completed an intensive, 8-week course on Data Science and Artificial Intelligence by the best engineering university in India, the Indian Institute of Technology, Madras as a part of their specialised School Connect Programme wherein I learned about the core fundamentals of various analytical tools and algorithms that power our models today.",
+      "Received 2 Certificates on successfully completing an intensive, 8-week course on Data Science and Artificial Intelligence by the best engineering university in India, the Indian Institute of Technology, Madras as a part of their specialised School Connect Programme wherein I learned about the core fundamentals of various analytical tools and algorithms that power our models today.",
   },
   {
     title: "National Entrepreneurship Olympiad, IIT Bombay",
