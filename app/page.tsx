@@ -5,7 +5,7 @@
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { createPortal } from "react-dom"
-import { projects, achievements, experience, contact, story } from "@/data"
+import { projects, achievements, experience, contact, story, books } from "@/data"
 import type { Project } from "@/data"
 
 const links = [
@@ -13,6 +13,7 @@ const links = [
   { id: "achievements", label: "Achievements" },
   { id: "experience", label: "Work Experience" },
   { id: "contact", label: "Contact" },
+  { id: "reads", label: "Reads" },
 ]
 
 const terminalLines = [
@@ -120,7 +121,7 @@ function Nav() {
         <a href="#top" className="hidden font-mono text-sm font-bold sm:block">
           neel maniar
         </a>
-        <div className="flex gap-5 font-mono text-xs sm:text-sm">
+        <div className="flex min-w-0 gap-4 overflow-x-auto whitespace-nowrap font-mono text-xs sm:gap-5 sm:text-sm">
           {links.map((l) => (
             <a
               key={l.id}
@@ -448,6 +449,73 @@ function Experience() {
   )
 }
 
+
+function FavouriteReads() {
+  return (
+    <section id="reads" className="mt-28 scroll-mt-20">
+      <Reveal>
+        <h2 className="text-3xl font-bold sm:text-5xl">
+          My Favourite Reads
+        </h2>
+        <p className="mt-4 max-w-2xl text-[var(--muted)]">
+          A few books that have influenced my curiosity about
+          technology, entrepreneurship, science, and the way we think.
+        </p>
+      </Reveal>
+
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {books.map((book) => (
+          <Reveal key={book.title}>
+            <BookCard book={book} />
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function BookCard({ book }: { book: (typeof books)[number] }) {
+  const [imageError, setImageError] = useState(false)
+
+  return (
+    <article className="card flex h-full flex-col overflow-hidden">
+      <div className="flex h-72 items-center justify-center bg-black/30 p-5 sm:h-80">
+        {imageError ? (
+          <div className="flex h-full w-full items-center justify-center rounded-lg border border-[var(--line)] p-5 text-center font-mono text-sm text-[var(--muted)]">
+            {book.title}
+          </div>
+        ) : (
+          <div className="relative h-full w-full">
+            <Image
+              src={book.image}
+              alt={`Cover of ${book.title}`}
+              fill
+              sizes="(min-width: 1024px) 300px, (min-width: 640px) 45vw, 90vw"
+              className="object-contain"
+              onError={() => setImageError(true)}
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="text-xl font-bold leading-snug">
+          {book.title}
+        </h3>
+
+        <p className="mt-2 font-mono text-xs text-[var(--accent)]">
+          {book.author}
+        </p>
+
+        <p className="mt-4 text-sm leading-relaxed text-[var(--muted)]">
+          {book.description}
+        </p>
+      </div>
+    </article>
+  )
+}
+
+
 export default function Home() {
   return (
     <main id="top" className="overflow-hidden">
@@ -493,6 +561,7 @@ export default function Home() {
         <Projects />
         <Achievements />
         <Experience />
+        <FavouriteReads />
 
         <section id="story" className="mt-28 scroll-mt-20">
           <h2 className="text-3xl font-bold sm:text-5xl">How and Why do I work the way I do</h2>

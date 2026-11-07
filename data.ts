@@ -241,3 +241,77 @@ export const story = [
 
   "This mindset pushes me forward every day to build and contribute meaningfully to society. I have launched ventures, failed, learned, and returned stronger. To build solutions that endure, giving up is never an option.  For me, it has never been."
 ]
+
+
+export type Book = {
+  title: string
+  author: string
+  description: string
+  image: string
+}
+
+export const books: Book[] = [
+  {
+    title: "AI Engineering",
+    author: "Chip Huyen",
+    description:
+      "A practical guide to building AI applications with foundation models, covering evaluation, architecture, agents, and the challenges of making AI systems work reliably.",
+    image: "/images/books/ai-engineering.jpg",
+  },
+  {
+    title: "Secrets of Silicon Valley",
+    author: "Deborah Perry Piscione",
+    description:
+      "An exploration of Silicon Valley's culture of innovation, risk-taking, entrepreneurship, and the environment that helps ambitious ideas grow.",
+    image: "/images/books/secrets-of-silicon-valley.jpg",
+  },
+  {
+    title: "Zero to One",
+    author: "Peter Thiel with Blake Masters",
+    description:
+      "A compelling perspective on startups, original thinking, and creating something genuinely new instead of simply competing with what already exists.",
+    image: "/images/books/zero-to-one.jpg",
+  },
+  {
+    title: "The Psychology of Money",
+    author: "Morgan Housel",
+    description:
+      "Explores how human behavior, patience, uncertainty, and personal decisions influence our relationship with money and long-term success.",
+    image: "/images/books/psychology-of-money.jpg",
+  },
+  {
+    title: "Computing with Quantum Cats",
+    author: "John Gribbin",
+    description:
+      "A journey through the history of computing and quantum mechanics, exploring how the strange principles of quantum physics might transform computation.",
+    image: "/images/books/quantum-cats.jpg",
+  },
+  {
+    title: "Brief Answers to the Big Questions",
+    author: "Stephen Hawking",
+    description:
+      "An exploration of some of humanity's biggest questions, from the origins of the universe to artificial intelligence and the future of civilization.",
+    image: "/images/books/brief-answers.jpg",
+  },
+  {
+    title: "HBR's 10 Must Reads on AI, Analytics, and the New Machine Age",
+    author: "Harvard Business Review",
+    description:
+      "A collection of perspectives on artificial intelligence, data analytics, technological disruption, and how emerging technologies reshape businesses.",
+    image: "/images/books/hbr-ai.jpg",
+  },
+  {
+    title: "Jacked Up",
+    author: "Bill Lane",
+    description:
+      "An insider's account of Jack Welch's leadership at General Electric, examining management, decision-making, corporate culture, and business transformation.",
+    image: "/images/books/jacked-up.jpg",
+  },
+  {
+  title: "Measure What Matters",
+  author: "John Doerr",
+  description:
+    "Explores how Objectives and Key Results (OKRs) help organizations set ambitious goals, measure meaningful progress, and turn ideas into measurable outcomes.",
+  image: "/images/books/okrs.jpg",
+  },
+]
